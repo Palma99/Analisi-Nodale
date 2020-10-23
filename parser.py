@@ -899,10 +899,13 @@ if i_unk == 1:
 # ## generate the circuit equations
 
 
-# Funzione che ritorna la matrice X
+# Funzioni utilizzate nel main.py
+
+# Funzione che ritorna la matrice X, contente le incognite
 def get_X():
     return X
 
+# Funzione che ritorna i valori delle variabili note 
 def get_variable_values():
     return content
 
