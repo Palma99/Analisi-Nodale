@@ -16,9 +16,6 @@ X = parser.X
 # 'var': '1000' ad esempio
 variabili = {}
 
-# Risolvo equazioni e in forma simbolica
-# solutions è un array che contiente le equazioni in forma di stringa
-solutions = str(solve(equ, X)).split(',')
 
 # Assegno alle variabili note i propri 
 # valori specificati nella netlist
@@ -26,6 +23,11 @@ for line in content:
     val = line.split(' ');
     variabili[val[0]] = val[3]
     
+
+# Risolvo equazioni e in forma simbolica
+# solutions è un array che contiente le equazioni in forma di stringa
+solutions = str(solve(equ, X)).split(',')
+
 
 # Sostituisco i valori nelle equazioni e ne calcolo il risultato
 # Infine stampa gli output
