@@ -40,4 +40,7 @@ for s in solutions:
         s = s.replace(val, variabili[val])
     s = s.strip()
     res = s.split(":")
-    print(res[0] + " = " + str(eval(res[1])))
+    unit = ' V'
+    if res[0][0].lower() == 'i':
+        unit = ' A'
+    print(res[0] + " = " + str(eval(res[1])) + unit)
