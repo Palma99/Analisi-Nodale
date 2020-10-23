@@ -126,6 +126,7 @@ import os
 from sympy import *
 import numpy as np
 import pandas as pd
+import re
 init_printing()
 
 
@@ -166,6 +167,12 @@ content = [x.strip() for x in content]  #remove leading and trailing white space
 while '' in content:
     content.pop(content.index(''))
 
+# rimuovo la notazione di spice per i nodi N00...
+i = 0
+for s in content:
+    content[i] = re.sub(r'N0+', '', s)
+    i += 1
+
 # remove comment lines, these start with a asterisk *
 content = [n for n in content if not n.startswith('*')]
 # remove other comment lines, these start with a semicolon ;
@@ -177,6 +184,7 @@ content = [n for n in content if not n.startswith('.')]
 content = [x.capitalize() for x in content]
 # removes extra spaces between entries
 content = [' '.join(x.split()) for x in content]
+
 # print(content)
 
 
